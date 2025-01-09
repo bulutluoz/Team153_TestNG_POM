@@ -18,7 +18,16 @@ public class C02_Priority {
     // 3- bestbuy sayfasina gidip url'in bestbuy icerdigini test edin
 
     /*
-
+        1- TestNG test method'larini alfabetik siraya gore calistirir
+        2- Eger siralamayi belirlemek istersek
+           method'lara priority degeri verebiliriz
+           bu durumda priority degeri kucuk olandan baslayip, buyuge dogru sirayla calistirir
+        3- bazi method'lara priority tanimlayip bazilarina tanimlamazsak
+           priority atanmayanlarin priority degeri 0 olur
+           ve siralama bu degere gore yapilir
+        4- priority degeri esit olanlar varsa
+           onlar kendi iclerinde harf sirasina gore calisirlar
+           digerleri ise priority degerine gore calisir
      */
 
     WebDriver driver;
@@ -35,7 +44,7 @@ public class C02_Priority {
     }
 
 
-    @Test
+    @Test (priority = -10)
     public void testotomasyonuTest(){
 
         driver.get("https://www.testotomasyonu.com");
