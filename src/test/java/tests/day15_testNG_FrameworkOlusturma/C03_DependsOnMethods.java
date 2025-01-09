@@ -19,6 +19,30 @@ public class C03_DependsOnMethods {
     // 2- phone icin arama yapip, urun bulunabildigini test edin
     // 3- ilk urunu tiklayip, urun isminde case sensitive olmadan phone bulundugunu test edin
 
+    /*
+        1-
+        b testinde dependsOnMethods ="a" yaziyorsa
+        a calisip PASSED olmadikca b'yi calistirma demek olur.
+        a calismaz veya calisip FAILED olursa b method'u IGNORE edilir ve calistirilmaz
+
+        2-
+        eger sadece b method'unu calistirmak istersek
+        b method'u "benim calismam a'nin calisip PASSED olmasina bagli" der
+        ve once a'yi calistirir
+        a calisip PASSED olduktan sonra b calisir
+        ANCAK bu bag 2 test method'u icin gecerlidir
+        3 method birbirine bagli oldugunda, 3.yu calistirmak istedigimizde
+        tum method'lar CALISMAZ
+
+        3-
+        dependsOnMethods BIR SIRALAMA YONTEMI degildir
+        sadece sira bir method'a geldiginde
+        bagli oldugu method'un once calismasini saglar
+
+
+
+     */
+
     WebDriver driver;
 
     @BeforeClass
@@ -47,7 +71,7 @@ public class C03_DependsOnMethods {
 
     }
 
-    @Test
+    @Test (dependsOnMethods = "anasayfaTesti")
     public void phoneAramaTesti(){
         // phone icin arama yapin
         WebElement aramaKutusu = driver.findElement(By.id("global-search"));
@@ -63,8 +87,8 @@ public class C03_DependsOnMethods {
 
     }
 
-    @Test
-    public void urunIsimTesti(){
+    @Test(dependsOnMethods = "phoneAramaTesti")
+    public void ilkUrunIsimTesti(){
         // 3- ilk urunu tiklayip,
         driver.findElement(By.xpath("(//*[@*='prod-img'])[1]"))
                 .click();
