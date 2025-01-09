@@ -17,6 +17,10 @@ public class C02_Priority {
     // 2- wisequarter sayfasina gidip url'in wisequarter icerdigini test edin
     // 3- bestbuy sayfasina gidip url'in bestbuy icerdigini test edin
 
+    /*
+
+     */
+
     WebDriver driver;
 
     @BeforeMethod
@@ -25,7 +29,6 @@ public class C02_Priority {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-
     @AfterMethod
     public void teardown(){
         driver.quit();
@@ -34,6 +37,9 @@ public class C02_Priority {
 
     @Test
     public void testotomasyonuTest(){
+
+        driver.get("https://www.testotomasyonu.com");
+
         String expectedUrlIcerik = "testotomasyonu";
         String actualUrl = driver.getCurrentUrl();
 
@@ -43,6 +49,8 @@ public class C02_Priority {
 
     @Test
     public void wisequarterTest(){
+        driver.get("https://www.wisequarter.com");
+
         String expectedUrlIcerik = "wisequarter";
         String actualUrl = driver.getCurrentUrl();
 
@@ -52,6 +60,8 @@ public class C02_Priority {
 
     @Test
     public void bestbuyTest(){
+        driver.get("https://www.bestbuy.com");
+
         String expectedUrlIcerik = "bestbuy";
         String actualUrl = driver.getCurrentUrl();
 
