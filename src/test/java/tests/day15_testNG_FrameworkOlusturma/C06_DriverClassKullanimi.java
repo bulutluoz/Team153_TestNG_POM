@@ -32,6 +32,7 @@ public class C06_DriverClassKullanimi {
         Driver.quitDriver();
     }
 
+
     @Test
     public void bestbuyTest(){
         Driver.getDriver().get("https://www.bestbuy.com");
