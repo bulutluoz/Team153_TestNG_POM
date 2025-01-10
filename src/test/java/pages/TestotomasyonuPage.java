@@ -2,10 +2,16 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 import java.util.List;
 
 public class TestotomasyonuPage {
+
+   public TestotomasyonuPage(){
+       PageFactory.initElements(Driver.getDriver(),this);
+   }
 
 
     @FindBy(id = "global-search")
@@ -20,6 +26,23 @@ public class TestotomasyonuPage {
     @FindBy(xpath = "//*[@class=' heading-sm mb-4']")
     public WebElement urunSayfasindakiIsimElementi;
 
+    @FindBy(id = "priceproduct")
+    public WebElement urunSayfasindakiFiyatElementi;
+
+    @FindBy(xpath = "(//span[.='Account'])[1]")
+    public WebElement accountLinki;
+
+    @FindBy(id = "email")
+    public WebElement loginSayfasiEmailKutusu;
+
+    @FindBy(id="password")
+    public WebElement loginSayfasiPasswordKutusu;
+
+    @FindBy(id="submitlogin")
+    public WebElement loginSayfasiSubmitButonu;
+
+    @FindBy(xpath = "//span[.='Logout']")
+    public WebElement logoutButonu;
 
 
 }
