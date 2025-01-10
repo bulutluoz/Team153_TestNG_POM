@@ -37,9 +37,9 @@ public class ReusableMethods {
         return stringList;
     }
 
-    public static void titleIleWindowGecisi(WebDriver driver , String hedefWindowTitle){
+    public static void titleIleWindowGecisi( String hedefWindowTitle){
         // 1- acik tum window'larin whd'lerini kaydedelim
-        Set<String> acikTumWindowlarinWhdSeti = driver.getWindowHandles();
+        Set<String> acikTumWindowlarinWhdSeti = Driver.getDriver().getWindowHandles();
 
         // 2- gecmek istedigimiz window'un title'ini kaydedelim
         // String hedefWindowTitle = "New Window";
@@ -51,18 +51,18 @@ public class ReusableMethods {
 
         for (String eachWhd : acikTumWindowlarinWhdSeti){
 
-            driver.switchTo().window(eachWhd);
+            Driver.getDriver().switchTo().window(eachWhd);
 
-            if (driver.getTitle().equals(hedefWindowTitle)){
+            if (Driver.getDriver().getTitle().equals(hedefWindowTitle)){
                 break;
             }
 
         }
     }
 
-    public static void urlIleWindowGecisi(WebDriver driver , String hedefWindowUrl){
+    public static void urlIleWindowGecisi( String hedefWindowUrl){
         // 1- acik tum window'larin whd'lerini kaydedelim
-        Set<String> acikTumWindowlarinWhdSeti = driver.getWindowHandles();
+        Set<String> acikTumWindowlarinWhdSeti = Driver.getDriver().getWindowHandles();
 
         // 2- gecmek istedigimiz window'un title'ini kaydedelim
         // String hedefWindowTitle = "New Window";
@@ -74,9 +74,9 @@ public class ReusableMethods {
 
         for (String eachWhd : acikTumWindowlarinWhdSeti){
 
-            driver.switchTo().window(eachWhd);
+            Driver.getDriver().switchTo().window(eachWhd);
 
-            if (driver.getCurrentUrl().equals(hedefWindowUrl)){
+            if (Driver.getDriver().getCurrentUrl().equals(hedefWindowUrl)){
                 break;
             }
 
