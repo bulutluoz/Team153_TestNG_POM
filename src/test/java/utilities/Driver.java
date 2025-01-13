@@ -12,8 +12,13 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
+        String kullanilacakBrowser = ConfigReader.getProperty("browser");
+
         if (driver == null) {
+
             driver = new ChromeDriver();
+
+
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
