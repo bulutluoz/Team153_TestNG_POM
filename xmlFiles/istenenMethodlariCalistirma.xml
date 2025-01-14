@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+       Ozel bir test icin
+       Day15 C02'deki testotomasyonuTest'ini
+             C03'deki ilkUrunIsimTesti haric diger test method'larini
+
+       Day16 C04'deki gecersizEmailGecersizPasswordTesti'ni
+
+       day17 C02'deki gecersizPasswordTesti disinda butun method'lari
+
+       toplu olarak calistirin
+-->
+
+<suite name="Ozel test suite i">
+    <test name="Istenen Method'lari calistirma">
+        <classes>
+            <class name="tests.day15_testNG_FrameworkOlusturma.C02_Priority">
+                <methods>
+                    <include name="testotomasyonuTest"></include>
+                </methods>
+            </class>
+            <class name="tests.day15_testNG_FrameworkOlusturma.C03_DependsOnMethods">
+                <methods>
+                    <exclude name="ilkUrunIsimTesti"></exclude>
+                </methods>
+            </class>
+            <class name="tests.day16_PageClassKullanimi.C04_NegatifLoginTesti">
+                <methods>
+                    <include name="gecersizEmailGecersizPasswordTesti"></include>
+                </methods>
+            </class>
+            <class name="tests.day17_testDatalariniDinamikYapma.C02_DinamikNegatifLoginTesti">
+                <methods>
+                    <exclude name="gecersizPasswordTesti"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

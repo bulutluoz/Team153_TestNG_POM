@@ -6,5 +6,19 @@
 -->
 
 
+<suite name="Mini Regression suite">
 
+    <test name="Mini Regression testleri">
+
+        <packages>
+
+            <package name="tests.day15_testNG_FrameworkOlusturma"></package>
+            <package name="tests.day16_PageClassKullanimi"></package>
+            <package name="tests.day17_testDatalariniDinamikYapma"></package>
+
+        </packages>
+
+    </test>
+
+</suite>
 

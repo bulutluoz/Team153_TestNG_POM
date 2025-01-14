@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+        Regression icin
+        framework'deki tum test class'larini toplu olarak calistirin
+-->
+
+<suite name="regression suite">
+    
+    <test name="Tum testleri calistirma">
+        
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+        
+    </test>
+
+</suite>
