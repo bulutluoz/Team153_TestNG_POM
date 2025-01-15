@@ -66,7 +66,7 @@ public class C01_RaporluAlisverisTesti extends TestBaseRapor {
         extentTest.pass("kaydettigi urun ismi ile sepetteki urun isminin ayni oldugunu test eder");
 
         //7- sayfayi kapatin
-        Driver.quitDriver();
+
         extentTest.info("sayfayi kapatir");
     }
 

@@ -12,9 +12,8 @@
 
         <packages>
 
-            <package name="tests.day15_testNG_FrameworkOlusturma"></package>
-            <package name="tests.day16_PageClassKullanimi"></package>
-            <package name="tests.day17_testDatalariniDinamikYapma"></package>
+            <package name="tests.day19_paralelCalistirma_htmlReports"></package>
+
 
         </packages>
 
