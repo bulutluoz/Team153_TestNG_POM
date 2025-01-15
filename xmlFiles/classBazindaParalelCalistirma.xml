@@ -1,0 +1,42 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+        Smoke Test icin
+
+        Day15 den C05 Class'ini
+        Day16 dan C01, C06 Class'larini
+        Day17 den C01, C02, C03 Class'larini
+        Day18 den C01, C02 Class'larini
+
+        class bazinda is bolusumu yaparak
+        2 browser ile
+        paralel olarak calistirin
+
+        thread-count="2"  ayni anda kac browser'in calisacagini belirler
+        parallel="classes"  browser'larin is paylasimini nasil yapacagini belirler
+                            "classes" secildiginde her browser bir class alarak
+                            calistirmaya baslar
+                            isini bitiren siradaki class'i alarak yola devam eder
+
+-->
+
+<suite name="Smoke Test Suite" thread-count="2" parallel="classes">
+
+    <test name="Smoke Tests">
+
+        <classes>
+
+            <class name="tests.day15_testNG_FrameworkOlusturma.C05_AramaTesti"></class>
+            <class name="tests.day16_PageClassKullanimi.C01_PageClassKullanimi"></class>
+            <class name="tests.day16_PageClassKullanimi.C06_WebUniversityTest"></class>
+            <class name="tests.day17_testDatalariniDinamikYapma.C01_configurationDosyaKullanimi"></class>
+            <class name="tests.day17_testDatalariniDinamikYapma.C02_DinamikNegatifLoginTesti"></class>
+            <class name="tests.day17_testDatalariniDinamikYapma.C03_AlisverisSepetiTesti"></class>
+            <class name="tests.day18_softAssert_xmlFiles.C01_SoftAssert"></class>
+            <class name="tests.day18_softAssert_xmlFiles.C02_SoftAssert"></class>
+
+        </classes>
+
+    </test>
+
+</suite>
