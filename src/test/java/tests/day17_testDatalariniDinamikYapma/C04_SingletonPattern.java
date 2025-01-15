@@ -11,7 +11,7 @@ public class C04_SingletonPattern {
     public void test01(){
 
         // testotomasyonu sayfasina gidin
-        // Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
 
         /*
             TestNG POM framework

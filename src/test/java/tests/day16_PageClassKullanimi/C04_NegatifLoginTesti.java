@@ -17,7 +17,7 @@ public class C04_NegatifLoginTesti {
     //5- Basarili olarak giris yapilamadigini test edin
 
 
-    @Test
+    @Test (groups = "regression")
     public void gecersizPasswordTesti(){
         //1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get("https://www.testotomasyonu.com/");
@@ -39,7 +39,7 @@ public class C04_NegatifLoginTesti {
 
     }
 
-    @Test
+    @Test (groups = {"smoke","E2E"})
     public void gecersizEmailTesti(){
         //1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get("https://www.testotomasyonu.com/");
@@ -62,7 +62,7 @@ public class C04_NegatifLoginTesti {
         Driver.quitDriver();
     }
 
-    @Test
+    @Test (groups = {"smoke","E2E","regression"})
     public void gecersizEmailGecersizPasswordTesti(){
         //1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get("https://www.testotomasyonu.com/");

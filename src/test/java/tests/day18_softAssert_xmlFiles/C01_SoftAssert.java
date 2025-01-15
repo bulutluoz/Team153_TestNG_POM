@@ -24,7 +24,7 @@ public class C01_SoftAssert {
         bir mesaj ekleyebiliriz
      */
 
-    @Test
+    @Test(groups = "E2E")
     public void aramaTesti(){
 
         // testotomasyonu anasayfaya gidin

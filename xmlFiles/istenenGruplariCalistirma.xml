@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+
+        Bir framework'de cok fazla test class'i olabilir
+        bu durumda herhangi bir test icin
+        cok fazla sayida class, package veya method secmek gerekebilir
+
+        Ayrica bir test method'una gittigimizde
+        o method'un hangi test'ler icin calistirildigini gormemiz de
+        guzel olabilir
+
+        Istersek, her Test icin calisacak class, package veya method'lari
+        tek tek secmek yerine
+        her method'un hangi Test'ler icin calisacagini secebiliriz
+-->
+
+<suite name="istenen gruplari secip calistirma">
+    <test name="istenen gruplari calistirma">
+
+        <groups>
+            <run>
+                <include name="E2E"/>
+                <exclude name="smoke"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+
+    </test>
+</suite>

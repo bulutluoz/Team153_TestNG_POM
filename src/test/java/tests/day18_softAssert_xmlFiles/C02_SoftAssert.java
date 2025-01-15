@@ -12,7 +12,7 @@ import java.util.List;
 
 public class C02_SoftAssert {
 
-    @Test
+    @Test (groups = {"smoke","E2E","regression"})
     public void zeroAppTesti(){
 
         // 1. “http://zero.webappsecurity.com/” Adresine gidin

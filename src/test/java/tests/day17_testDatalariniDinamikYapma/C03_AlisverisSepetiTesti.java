@@ -9,7 +9,7 @@ import utilities.Driver;
 
 public class C03_AlisverisSepetiTesti {
 
-    @Test
+    @Test (groups = {"smoke","regression"})
     public void alisverisTesti(){
         //1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));

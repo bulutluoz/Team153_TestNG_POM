@@ -10,7 +10,7 @@ import utilities.ReusableMethods;
 
 public class C06_WebUniversityTest {
 
-    @Test
+    @Test (groups = "regression")
     public void test01(){
         //1."https://webdriveruniversity.com/" adresine gidin
         Driver.getDriver().get("https://webdriveruniversity.com/");
