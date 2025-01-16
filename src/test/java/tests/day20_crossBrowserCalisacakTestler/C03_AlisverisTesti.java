@@ -40,7 +40,7 @@ public class C03_AlisverisTesti extends TestBaseCross {
         // ve urunu sepete ekleyin
         driver.findElement(By.className("add-to-cart"))
                 .click();
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
 
         //5- your cart linkine tiklayin
         driver.findElement(By.xpath("(//*[@class='e-cart'])[2]"))

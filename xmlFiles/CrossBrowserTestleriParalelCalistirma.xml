@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+        Uygulamamizin farkli browser'lar ile
+        sorunsuz olarak calistirilabildigini test etmek icin
+        ozel olarak belirlenip, day20_crossBrowserCalisacakTestler package'ina koydugumuz
+        test class'larini
+        chrome ve firefox ile calisacak sekilde
+        toplu olarak paralel test olarak run edin
+
+-->
+
+<suite name="Cross Browser Testler Suite'i" parallel="tests" thread-count="2">
+
+    <test name="Chrome ile calisacak testler">
+        <parameter name="kullanilacakBrowser" value="chrome"></parameter>
+        <packages>
+            <package name="tests.day20_crossBrowserCalisacakTestler"></package>
+        </packages>
+    </test>
+
+    <test name="Firefox ile calisacak testler">
+        <parameter name="kullanilacakBrowser" value="firefox"></parameter>
+        <packages>
+            <package name="tests.day20_crossBrowserCalisacakTestler"></package>
+        </packages>
+    </test>
+
+</suite>
