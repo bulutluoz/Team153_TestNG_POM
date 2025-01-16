@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+        Uygulamamizin farkli browser'lar ile
+        sorunsuz olarak calistirilabildigini test etmek icin
+        ozel olarak belirlenip, day20_crossBrowserCalisacakTestler package'ina koydugumuz
+        test class'larini
+        chrome ve firefox ile calisacak sekilde
+        toplu olarak run edin
+
+        Adimlar
+        1- ozel bir .xml dosyasi olusturup
+           her bir browser ile calismasini istedigimiz
+           class/package veya method'lari bir test olarak secin
+        2- .xml dosyasinda hazirladigimiz her bir test icin
+           ozel bir satir ekleyip
+           calistirilacak browser'i parametre olarak hazirlayin
+        3- her test class'inda parametre okumakla ugrasmamak icin
+           bir TestBaseCross olusturun
+           Bu class'in amaci
+           .xml dosyasindan gonderilen parametreye uygun browser'i
+           DriverCross class'inda olusturmak
+           ve kendisini parent edinen Class'larin kullanimina sunmak
+        4- DriverCross olusturun
+           bu class'in amaci
+           .xml'den yollanan ve TestBaseCross'un yakaladigi
+           sonra da DriverCross'a parametre olarak yolladigi
+           "kullanilacakBrowser"i olusturmak
+           ve TestBaseCross'a dondurmektir.
+
+-->
+
+<suite name="Cross Browser Testler Suite'i">
+
+    <test name="Chrome ile calisacak testler">
+        <parameter name="kullanilacakBrowser" value="chrome"></parameter>
+        <packages>
+            <package name="tests.day20_crossBrowserCalisacakTestler"></package>
+        </packages>
+    </test>
+
+    <test name="Firefox ile calisacak testler">
+        <parameter name="kullanilacakBrowser" value="firefox"></parameter>
+        <packages>
+            <package name="tests.day20_crossBrowserCalisacakTestler"></package>
+        </packages>
+    </test>
+
+</suite>
