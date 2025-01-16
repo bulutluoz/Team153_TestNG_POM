@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.TestotomasyonuPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseCross;
 
 public class C01_PozitifLoginTesti extends TestBaseCross {
@@ -18,10 +19,12 @@ public class C01_PozitifLoginTesti extends TestBaseCross {
 
         // Driver.getDriver().get("configuration.properties dosyasina git bana toUrl degerini getir");
         driver.get(ConfigReader.getProperty("toUrl"));
+        ReusableMethods.bekle(1);
 
         // 2- account linkine basin
         WebElement accountLinki = driver.findElement(By.xpath("(//span[.='Account'])[1]"));
         accountLinki.click();
+        ReusableMethods.bekle(1);
 
         // 3- Kullanici email'i olarak gecerli email girin
         driver.findElement(By.id("email"))
@@ -34,7 +37,7 @@ public class C01_PozitifLoginTesti extends TestBaseCross {
         // 5- Login butonuna basarak login olun
         driver.findElement(By.id("submitlogin"))
                 .click();
-
+        ReusableMethods.bekle(1);
         // 6- Basarili olarak giris yapilabildigini test edin
         WebElement logoutButonu = driver.findElement(By.xpath("//span[.='Logout']"));
 
